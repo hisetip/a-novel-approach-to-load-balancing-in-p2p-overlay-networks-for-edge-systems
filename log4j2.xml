@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" shutdownHook="disable">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern='time="%d{MMM dd HH:mm:ss.SSS}" level="%level" msg="[%logger] %msg"%n'/>
+        </Console>
+
+        <File name="MultiLoggerChannelFile" fileName="${sys:logFilename}/MultiLoggerChannel.log" append="false" immediateFlush="true">
+            <PatternLayout pattern='time="%d{MMM dd HH:mm:ss.SSS}" level="%level" msg="[%logger] %msg"%n'/>
+        </File>
+
+        <File name="MainFile" fileName="${sys:logFilename}/Main.log" append="false" immediateFlush="true">
+            <PatternLayout pattern='time="%d{MMM dd HH:mm:ss.SSS}" level="%level" msg="[%logger] %msg"%n'/>
+        </File>
+
+        <File name="ResEstFile" fileName="${sys:logFilename}/ResEst.log" append="false" immediateFlush="true">
+            <PatternLayout pattern='time="%d{MMM dd HH:mm:ss.SSS}" level="%level" msg="[%logger] %msg"%n'/>
+        </File>
+        <File name="FoutakosFile" fileName="${sys:logFilename}/Foutakos.log" append="false" immediateFlush="true">
+            <PatternLayout pattern='time="%d{MMM dd HH:mm:ss.SSS}" level="%level" msg="[%logger] %msg"%n'/>
+        </File>
+
+        <File name="HyparviewFile" fileName="${sys:logFilename}/Hyparview.log" append="false" immediateFlush="true">
+            <PatternLayout pattern='time="%d{MMM dd HH:mm:ss.SSS}" level="%level" msg="[%logger] %msg"%n'/>
+        </File>
+        <File name="CyclonFile" fileName="${sys:logFilename}/Cyclon.log" append="false" immediateFlush="true">
+            <PatternLayout pattern='time="%d{MMM dd HH:mm:ss.SSS}" level="%level" msg="[%logger] %msg"%n'/>
+        </File>
+
+        <File name="HyparviewResEstFile" fileName="${sys:logFilename}/HyparviewResEst.log" append="false" immediateFlush="true">
+            <PatternLayout pattern='time="%d{MMM dd HH:mm:ss.SSS}" level="%level" msg="[%logger] %msg"%n'/>
+        </File>
+        <File name="CyclonResEstFile" fileName="${sys:logFilename}/CyclonResEst.log" append="false" immediateFlush="true">
+            <PatternLayout pattern='time="%d{MMM dd HH:mm:ss.SSS}" level="%level" msg="[%logger] %msg"%n'/>
+        </File>
+        <File name="HyparviewIntegratedFile" fileName="${sys:logFilename}/HyparviewIntegrated.log" append="false" immediateFlush="true">
+            <PatternLayout pattern='time="%d{MMM dd HH:mm:ss.SSS}" level="%level" msg="[%logger] %msg"%n'/>
+        </File>
+
+        <File name="FloodFile" fileName="${sys:logFilename}/Flood.log" append="false" immediateFlush="true">
+            <PatternLayout pattern='time="%d{MMM dd HH:mm:ss.SSS}" level="%level" msg="[%logger] %msg"%n'/>
+        </File>
+
+        <File name="AppFile" fileName="${sys:logFilename}/Application.log" append="false" immediateFlush="true">
+            <PatternLayout pattern='time="%d{MMM dd HH:mm:ss.SSS}" level="%level" msg="[%logger] %msg"%n'/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="debug">
+            <!--<AppenderRef ref="Console" level="info"/>
+            <AppenderRef ref="Console" level="debug"/>
+            <AppenderRef ref="MyFile" level="debug"/>-->
+        </Root>
+
+    <!--Logger level="info" name="io.netty"/>
+    <Logger level="info" name="network"/>
+    <Logger level="info" name="channel"/>
+    <Logger level="debug" name="babel"/>-->
+
+        <!--<Logger name="pt.unl.fct.di.novasys.babel.metrics" level="debug">
+            <AppenderRef ref="MetricsFile" level="all"/>
+        </Logger>>-->
+
+        <Logger name="channels.MultiLoggerChannel" level="info">
+            <AppenderRef ref="MultiLoggerChannelFile" level="info"/>
+        </Logger>
+
+        <Logger name="Main" level="info">
+            <AppenderRef ref="MainFile" level="info"/>
+        </Logger>
+
+        <Logger name="protocols.optimization.resest" level="info">
+            <AppenderRef ref="ResEstFile" level="info"/>
+        </Logger>
+        <Logger name="protocols.optimization.foutakos" level="info">
+            <AppenderRef ref="FoutakosFile" level="info"/>
+        </Logger>
+
+        <Logger name="protocols.membership.hyparview" level="info">
+            <AppenderRef ref="HyparviewFile" level="info"/>
+        </Logger>
+        <Logger name="protocols.membership.cyclon" level="info">
+            <AppenderRef ref="CyclonFile" level="info"/>
+        </Logger>
+
+        <Logger name="protocols.membership.hyparviewresest" level="info">
+            <AppenderRef ref="HyparviewResEstFile" level="info"/>
+        </Logger>
+        <Logger name="protocols.membership.cyclonresest" level="info">
+            <AppenderRef ref="CyclonResEstFile" level="info"/>
+        </Logger>
+        <Logger name="protocols.membership.hyparviewintegrated" level="info">
+            <AppenderRef ref="HyparviewIntegratedFile" level="info"/>
+        </Logger>
+
+        <Logger name="protocols.dissemination.flood" level="info">
+            <AppenderRef ref="FloodFile" level="info"/>
+        </Logger>
+
+        <Logger name="protocols.app" level="info">
+            <AppenderRef ref="AppFile" level="info"/>
+        </Logger>
+    </Loggers>
+</Configuration>

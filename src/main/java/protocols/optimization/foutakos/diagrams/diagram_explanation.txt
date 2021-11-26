@@ -1,0 +1,9 @@
+We noticed that Foutakos simply sending the computed number of neighbors
+to the overlay everytime it computed could create an instability problem, because the numbers could be
+for example 3,4,3,4,3,4, etc. (this is especially bad on hyparview).
+
+Then, we decided to try a more complex approach to minimize instability (diagram ..._complex_approach.png).
+However, when resest had a high margin and low conf. interval, we still noticed instability in some cases
+(e.g, 4,6,4,...).
+
+Then, we decided to always send the average of the last 5 nodes, to minimize instability.
